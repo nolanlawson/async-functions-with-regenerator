@@ -31,3 +31,30 @@ To see the built version, run:
     npm run build
 
 This will create a `bundle.js` you can inspect. By my measurements, the total size after uglify+gzip is 2922 bytes.
+
+Sample output
+----
+
+```js
+function sayHello() {
+  return regeneratorRuntime.async(function sayHello$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.t0 = console;
+          _context.next = 3;
+          return regeneratorRuntime.awrap(Promise.resolve('hello world'));
+
+        case 3:
+          _context.t1 = _context.sent;
+
+          _context.t0.log.call(_context.t0, _context.t1);
+
+        case 5:
+        case 'end':
+          return _context.stop();
+      }
+    }
+  }, null, this);
+}
+```
